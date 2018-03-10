@@ -18,19 +18,19 @@
 <script>
 	new Vue({
 	el: '#app',
-  data: {
-  	title: 'Hello World!',
-    link: 'http://google.com',
-    finishedLink: '<a href="http://google.com">Google</a>'
-  },
-  methods: {
-  	changeTitle: function(event) {
-    	this.title = event.target.value;
+    data: {
+        title: 'Hello World!',
+        link: 'http://google.com',
+        finishedLink: '<a href="http://google.com">Google</a>'
     },
-    sayHello: function() {
-        return 'Hello!';
+    methods: {
+        changeTitle: function(event) {
+            this.title = event.target.value;
+        },
+        sayHello: function() {
+            return 'Hello!';
+        }
     }
-  }
 });
 </script>
 </body>
