@@ -8,6 +8,7 @@
 	<script src="vue.js"></script>
 </head>
 <body>
+<h1>Before exercise</h1>
 <div id="app">
   <input type="text" v-on:input="changeTitle">
   <p>{{ title }}</p>
@@ -16,6 +17,7 @@
   <p v-html="finishedLink"></p>
 </div>
 <hr>
+ <h1>First exercise</h1>
 <div id="exercise">
     <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
      <p>VueJS is pretty cool - {{ name }} {{ age }}</p>
@@ -32,6 +34,15 @@
          <input type="text" v-bind:value="name">
      </div>
  </div>
+
+ <hr>
+ <h1>Lecture 16</h1>
+
+<div id="lecture-16">
+    <button v-on:click="increase(2, $event)">Click me</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+</div>
 
 <script>
 new Vue({
@@ -61,6 +72,24 @@ new Vue({
     methods: {
         randomFloat: function() {
             return Math.random();
+        }
+    }
+});
+
+new Vue ({
+    el: '#lecture-16',
+    data: {
+        counter: 0,
+        x: 0,
+        y: 0
+    },
+    methods: {
+        increase: function(step, event) {
+            this.counter += step;
+        },
+        updateCoordinates: function(event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
         }
     }
 });
