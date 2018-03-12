@@ -58,7 +58,13 @@
     <input type="text" v-on:keydown.enter="replaceValue">
     <p>{{ value }}</p>
 
+</div>
 
+<hr>
+
+<div id="lecture-22">
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
 </div>
 
 <script>
@@ -127,6 +133,16 @@ new Vue ({
         replaceValue: function(event){
             this.value = event.target.value;
         }
+    }
+});
+
+new Vue ({
+    el: '#lecture-22',
+    data: {
+        name: 'Mark'
+    },
+    methods: {
+
     }
 });
 </script>
