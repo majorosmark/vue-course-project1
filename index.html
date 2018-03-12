@@ -48,6 +48,19 @@
     <input type="text" v-on:keyup.enter.space="alertMe">
 </div>
 
+<hr>
+
+<div id="exercise-2">
+    <div>
+        <button v-on:click="showAlert">Show Alert</button>
+    </div>
+
+    <input type="text" v-on:keydown.enter="replaceValue">
+    <p>{{ value }}</p>
+
+
+</div>
+
 <script>
 new Vue({
 	el: '#app',
@@ -98,6 +111,21 @@ new Vue ({
         },
         alertMe: function() {
             alert('Alert');
+        }
+    }
+});
+
+new Vue ({
+    el: '#exercise-2',
+    data: {
+        value: ''
+    },
+    methods: {
+        showAlert: function() {
+            alert('Alert');
+        },
+        replaceValue: function(event){
+            this.value = event.target.value;
         }
     }
 });
